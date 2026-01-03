@@ -17,8 +17,11 @@ function validateName() {
   // The first character is a letter
   // The second is a space
   // The third is another character
-  if (!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*&/)) {
+  if (!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)) {
     nameError.innerHTML = "Write full name";
     return false;
   }
+  // If there is no error, display 'valid':
+  nameError.innerHTML = `<i class="fa-solid fa-circle-check"></i>`;
+  return true;
 }
