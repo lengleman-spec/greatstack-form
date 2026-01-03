@@ -11,5 +11,14 @@ function validateName() {
   // When name is 0 (nothing entered) 'name is required' displays
   if (name.length == 0) {
     nameError.innerHTML = "Name is required";
+    return false;
+  }
+  // If value doesn't match the format:
+  // The first character is a letter
+  // The second is a space
+  // The third is another character
+  if (!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*&/)) {
+    nameError.innerHTML = "Write full name";
+    return false;
   }
 }
