@@ -25,7 +25,8 @@
 }
 
 .container form {
-  width: 90%;
+  width: 80%;
+  max-height: 80vh;
   max-width: 500px;
   padding: 50px 30px 20px;
   background: #fff;
