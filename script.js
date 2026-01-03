@@ -25,3 +25,23 @@ function validateName() {
   nameError.innerHTML = `<i class="fa-solid fa-circle-check"></i>`;
   return true;
 }
+
+function validatePhone() {
+  var phone = document.getElementById("contact-phone").value;
+
+  if (phone.length == 0) {
+    phoneError.innerHTML = "Phone number is required";
+    return false;
+  }
+  if (phone.length !== 10) {
+    phoneError.innerHTML = "Phone number should be 10 digits";
+    return false;
+  }
+  if (!phone.match(/^[0-9]{10}$/)) {
+    phoneError.innerHTML = "Only Digits";
+    return false;
+  }
+
+  phoneError.innerHTML = `<i class="fa-solid fa-circle-check"></i>`;
+  return true;
+}
