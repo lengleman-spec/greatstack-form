@@ -45,3 +45,20 @@ function validatePhone() {
   phoneError.innerHTML = `<i class="fa-solid fa-circle-check"></i>`;
   return true;
 }
+
+function validateEmail() {
+  var email = document.getElementById("contact-email").value;
+
+  if (email.length == 0) {
+    emailError.innerHTML = "Email is required";
+    return false;
+  }
+
+  if (!email.match(/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/)) {
+    emailError.innerHTML = "Email Invalid";
+    return false;
+  }
+
+  emailError.innerHTML = '<i class="fas fa-check-circle"></i>';
+  return true;
+}
